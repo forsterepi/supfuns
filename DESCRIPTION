@@ -1,0 +1,30 @@
+Package: supfuns
+Type: Package
+Title: Non-project-related support functions (supfuns)
+Version: 0.1.0
+Authors@R: 
+    person("Felix", "Forster", , "felix.forster@med.uni-muenchen.de", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-3670-9244"))
+Description: Contains a collection of supporting functions without any 
+    overarching topic or purpose. Functions can be used across different 
+    projects.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    dplyr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    checkmate,
+    cli,
+    ggplot2,
+    magrittr,
+    mice,
+    purrr,
+    rlang,
+    simcausal,
+    stringi
+Depends: 
+    R (>= 4.1)
+RoxygenNote: 7.3.3
