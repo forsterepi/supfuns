@@ -3,6 +3,7 @@
 utils::globalVariables(".")
 
 #' @importFrom rlang .data :=
+#' @importFrom doFuture %dofuture%
 NULL
 
 # devtools::check() does not realize that package poLCA is needed in Imports

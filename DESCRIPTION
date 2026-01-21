@@ -12,21 +12,29 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    dplyr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
     checkmate,
     cli,
+    constructive,
+    doFuture,
+    dplyr,
+    forcats,
+    foreach,
     ggplot2,
+    hmmTMB,
+    iterators,
     magrittr,
     mice,
     plyr,
     poLCA,
+    progressr,
     purrr,
     rlang,
     simcausal,
     stringi,
+    tibble,
     tidyselect
 Depends: 
     R (>= 4.1)
