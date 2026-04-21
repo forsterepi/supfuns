@@ -16,6 +16,7 @@ Suggests:
     truncnorm
 Config/testthat/edition: 3
 Imports: 
+    brms,
     checkmate,
     cli,
     constructive,
@@ -30,6 +31,7 @@ Imports:
     mice,
     plyr,
     poLCA,
+    posterior,
     progressr,
     purrr,
     rlang,
