@@ -65,7 +65,7 @@ brms_diag <- function(fit, max_treedepth = 10) {
 brms_diag_div <- function(fit) {
   brms::nuts_params(fit, pars = "divergent__") %>%
     magrittr::extract2("Value") %>%
-    sum()
+    sum(na.rm = TRUE)
 }
 
 #' Evaluate treedepth in brmsfit
@@ -91,7 +91,7 @@ brms_diag_tree <- function(fit, max_treedepth = 10) {
   brms::nuts_params(fit, pars = "treedepth__") %>%
     magrittr::extract2("Value") %>%
     magrittr::is_weakly_greater_than(max_treedepth) %>%
-    sum()
+    sum(na.rm = TRUE)
 }
 
 #' Evaluate E-BFMI in brmsfit
@@ -120,7 +120,7 @@ brms_diag_bfmi <- function(fit) {
     ) %>%
     unlist() %>%
     magrittr::is_less_than(0.2) %>%
-    sum()
+    sum(na.rm = TRUE)
 }
 
 #' Evaluate Rhat in brmsfit
@@ -140,7 +140,7 @@ brms_diag_rhat <- function(fit) {
     posterior::summarise_draws("rhat") %>%
     magrittr::extract2("rhat") %>%
     magrittr::is_greater_than(1.01) %>%
-    sum()
+    sum(na.rm = TRUE)
 }
 
 #' Evaluate bulk effective sample size in brmsfit
@@ -162,7 +162,7 @@ brms_diag_ess_bulk <- function(fit) {
     posterior::summarise_draws("ess_bulk") %>%
     magrittr::extract2("ess_bulk") %>%
     magrittr::is_weakly_less_than(100 * brms::nchains(fit)) %>%
-    sum()
+    sum(na.rm = TRUE)
 }
 
 #' Evaluate tail effective sample size in brmsfit
@@ -184,5 +184,5 @@ brms_diag_ess_tail <- function(fit) {
     posterior::summarise_draws("ess_tail") %>%
     magrittr::extract2("ess_tail") %>%
     magrittr::is_weakly_less_than(100 * brms::nchains(fit)) %>%
-    sum()
+    sum(na.rm = TRUE)
 }
